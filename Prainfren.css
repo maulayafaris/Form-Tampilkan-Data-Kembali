@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+.form-container {
+    background-color: #f8f8f8;
+    width: 100%;
+    max-width: 500px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.form-title {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+#inputDataForm {
+    display: flex;
+    flex-direction: column;
+}
+input, textarea {
+    margin: 10px 0;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+input:focus {
+    border-color: #4CAF50;
+}
+button {
+    width: 150px;
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    align-self: flex-end;
+    margin-top: 10px;
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #45a049;
+}
+
+#dataTable {
+    margin-top: 20px;
+    width: 100%;
+    border-collapse: collapse;
+}
+#dataTable tr:nth-child(odd) {
+    background-color: white;
+}
+#dataTable tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+#dataTable td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+#dataTable td:first-child {
+    font-weight: bold;
+    width: 30%;
+}
+
+@media screen and (max-width: 480px) {
+    .form-container {
+        width: 95%;
+        padding: 20px;
+    }
+    button {
+        width: 100%;
+    }
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Isi Data Pengguna</title>
+    <link rel="stylesheet" href="Prainfren.css">
+    <!-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> --> 
+</head>
+<body>
+    <div class="form-container">
+        <h1 class="form-title">Form Data Diri</h1>
+        <form id="inputDataForm">
+            <label>Nama: </label><input type="text" id="name"><br>
+            <label>Email: </label><input type="email" id="email"><br>
+            <label>Alamat: </label><textarea id="address"></textarea><br>
+            <button type="button" onclick="showData()">Submit</button><br>
+        </form>
+    
+        
+        <table id="dataTable">
+            <tbody id="dataTableBody">
+                <!-- The data has already input will show on this-->
+            </tbody>
+        </table>
+    
+    </div>
+    
+    
+
+    <script>
+        let dataArray = [];
+
+        function showData(){
+            const dName = document.getElementById("name").value;
+            const dEmail = document.getElementById("email").value;
+            const dAddress = document.getElementById("address").value;
+
+            if (dName.trim() === ''){
+                alert('Data nama belum diisi')
+                return
+            }
+            if (dEmail.trim() === ''){
+                /*
+                Swal.fire({
+                    title: '',
+                    html: '<p>Data <b>email</b> belum diisi</p>',
+                    icon: 'info'
+                });
+                */
+                alert('Data email belum diisi')
+                return
+            }
+            if (dAddress.trim() === ''){
+                alert('Data address belum diisi')
+                return
+            }
+            else{
+                const dataObj = {
+                    dName: dName,
+                    dEmail: dEmail,
+                    dAddress: dAddress
+                };
+
+                dataArray.push(dataObj);
+
+                const tableBody = document.getElementById('dataTableBody');
+                tableBody.innerHTML = '';
+
+                // Name
+                const rowName = tableBody.insertRow();
+                rowName.insertCell(0).textContent = 'Nama';
+                rowName.insertCell(1).textContent = dataObj.dName;
+
+                // Email
+                const rowEmail = tableBody.insertRow();
+                rowEmail.insertCell(0).textContent = 'Email';
+                rowEmail.insertCell(1).textContent = dataObj.dEmail;
+
+                // Address
+                const rowAddress = tableBody.insertRow();
+                rowAddress.insertCell(0).textContent = 'Alamat';
+                rowAddress.insertCell(1).textContent = dataObj.dAddress;
+
+                
+                /*
+                outputDiv.innerHTML = `
+                    <br/>
+                     <table id="dataTable">
+                        <tr>
+                             <th>Nama:</th>
+                             <th>${dataObj.dName}</th>
+                        </tr>
+                        <tr>
+                            <th>Email:</th>
+                            <th>${dataObj.dEmail}</th>
+                        </tr>
+                        <tr>
+                            <th>Alamat:</th>
+                            <th>${dataObj.dAddress}</th>
+                        </tr>
+                    </table>
+                `; 
+                */
+            }
+        }
+    </script>
+</body>
+</html>
