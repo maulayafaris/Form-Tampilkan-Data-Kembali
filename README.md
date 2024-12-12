@@ -1,2 +1,3 @@
 # Form-Tampilkan-Data-Kembali
-Praktik membuat Form pengisian data yang nantinya akan ditampilkan data yang sudah diinputkan tadi pada halaman yang sama menggunakan bahasa pemrograman Javascript.
+
+Praktik membuat Form data diri Front End Introduction MySkill yang dimana peserta disuruh mengkoding sendiri sesuai dengan petunjuk yang sudah tertera pada modul praktik.
